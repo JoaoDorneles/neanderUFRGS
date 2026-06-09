@@ -1,0 +1,16 @@
+module AC(clk, rst, cargaAC, d, q);
+	input        clk, reset, cargaAC;
+	input  [7:0] d;
+	output [7:0] q;
+	
+	// 8 flip-flops D em paralelo, um por bit
+	flip_flop_d ffd0(clk, rst, cargaAC, d[0], q[0]);
+	flip_flop_d ffd1(clk, rst, cargaAC, d[1], q[1]);
+	flip_flop_d ffd2(clk, rst, cargaAC, d[2], q[2]);
+	flip_flop_d ffd3(clk, rst, cargaAC, d[3], q[3]);
+	flip_flop_d ffd4(clk, rst, cargaAC, d[4], q[4]);
+	flip_flop_d ffd5(clk, rst, cargaAC, d[5], q[5]);
+	flip_flop_d ffd6(clk, rst, cargaAC, d[6], q[6]);
+	flip_flop_d ffd7(clk, rst, cargaAC, d[7], q[7]);
+	
+endmodule

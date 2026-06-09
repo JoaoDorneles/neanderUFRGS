@@ -1,0 +1,16 @@
+module runStepMode(clkDiv,runDebug, sel, clkOut);
+
+	input clkDiv,runDebug,sel;
+	output reg clkOut;
+	
+	always@(*)begin
+	
+		if(sel)
+			clkOut <= runStep;
+		else
+			clkOut <= clkDiv;
+		end
+	
+	end
+	
+endmodule
