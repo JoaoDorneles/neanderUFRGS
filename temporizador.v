@@ -1,55 +1,39 @@
 module temporizador(
-	input clk, hlt, goto_t0,
+	input clk, rst, hlt, goto_t0,
 	output t7, t6, t5, t4, t3, t2, t1, t0
 );
 
-	reg [1:0] sel;
-	reg [7:0] d;
-	wire [7:0] count_q;
+	//estados atuais dos flip-flops
+	wire q2, q1, q0;
+	
+	//proximos estados (entrada d do flip-flop)
+	wire d2, d1, d0;
+	
+	wire inc2, inc1, inc0;
+	
+	//logica do incrementador
+	assign inc0 = ~q0;
+	assign inc1 = q1 ^ q0;
+	assign inc2 = q2 ^ (q1 & q0);
+	
+	assign d0 = ~goto_t0 & ((hlt & q0) | (~hlt & inc0));
+	assign d1 = ~goto_t0 & ((hlt & q1) | (~hlt & inc1));
+	assign d2 = ~goto_t0 & ((hlt & q2) | (~hlt & inc2));
+	
+	flip_flop_d ff0(.clk(clk), .rst(rst), .d(d0), .q(q0));
+	flip_flop_d ff1(.clk(clk), .rst(rst), .d(d1), .q(q1));
+	flip_flop_d ff2(.clk(clk), .rst(rst), .d(d2), .q(q2));
 
-	contadorUpDown inst_contador(
-		.clk(clk),
-		.rst(1'b1), //reset assincrono inativo
-		.sel(sel),
-		.d(d),
-		.q(count_q)
-	);
 	
-	always @(*)begin
-		if (goto_t0) begin
-			sel = 2'b0;
-			d = 8'd0;
-		end
-		else if(hlt) begin //pausa a contagem e mantem o valor atual
-			sel = 2'b01;
-			d = 8'd0;
-		end
-		else if (count_q == 8'd7) begin //apos t7, vai para t0
-			sel = 2'b00;
-			d = 8'd0;
-		end
-		else begin
-			sel = 2'b10; //conta para cima
-			d = 8'd0;
-		end
-	end
-	
-	assign t7 = count_q[2] & count_q[1] & count_q[0];
-	
-	assign t6 = count_q[2] & count_q[1] & ~count_q[0];
-	
-	assign t5 = count_q[2] & ~count_q[1] & count_q[0];
-	
-	assign t4 = count_q[2] & ~count_q[1] & ~count_q[0];
-	
-	assign t3 = ~count_q[2] & count_q[1] & count_q[0];
-	
-	assign t2 = ~count_q[2] & count_q[1] & ~count_q[0];
-	
-	assign t1 = ~count_q[2] & ~count_q[1] & count_q[0];
-	
-	assign t0 = ~count_q[2] & ~count_q[1] & ~count_q[0];
-	
+	//decodificador de saida
+	assign t7 =  q2 &  q1 &  q0;
+	assign t6 =  q2 &  q1 & ~q0;
+	assign t5 =  q2 & ~q1 &  q0;
+	assign t4 =  q2 & ~q1 & ~q0;
+	assign t3 = ~q2 &  q1 &  q0;
+	assign t2 = ~q2 &  q1 & ~q0;
+	assign t1 = ~q2 & ~q1 &  q0;
+	assign t0 = ~q2 & ~q1 & ~q0;
 
 endmodule
 	

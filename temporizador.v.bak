@@ -1,0 +1,55 @@
+module temporizador(
+	input clk, hlt, goto_t0,
+	output t7, t6, t5, t4, t3, t2, t1, t0
+);
+
+	reg [1:0] sel;
+	reg [7:0] d;
+	wire [7:0] count_q;
+
+	contadorUpDown inst_contador(
+		.clk(clk),
+		.rst(1'b1), //reset assincrono inativo
+		.sel(sel),
+		.d(d),
+		.q(count_q)
+	);
+	
+	always @(*)begin
+		if (goto_t0) begin
+			sel = 2'b0;
+			d = 8'd0;
+		end
+		else if(hlt) begin //pausa a contagem e mantem o valor atual
+			sel = 2'b01;
+			d = 8'd0;
+		end
+		else if (count_q == 8'd7) begin //apos t7, vai para t0
+			sel = 2'b00;
+			d = 8'd0;
+		end
+		else begin
+			sel = 2'b10; //conta para cima
+			d = 8'd0;
+		end
+	end
+	
+	assign t7 = count_q[2] & count_q[1] & count_q[0];
+	
+	assign t6 = count_q[2] & count_q[1] & ~count_q[0];
+	
+	assign t5 = count_q[2] & ~count_q[1] & count_q[0];
+	
+	assign t4 = count_q[2] & ~count_q[1] & ~count_q[0];
+	
+	assign t3 = ~count_q[2] & count_q[1] & count_q[0];
+	
+	assign t2 = ~count_q[2] & count_q[1] & ~count_q[0];
+	
+	assign t1 = ~count_q[2] & ~count_q[1] & count_q[0];
+	
+	assign t0 = ~count_q[2] & ~count_q[1] & ~count_q[0];
+	
+
+endmodule
+	
