@@ -1,6 +1,6 @@
 EDA Netlist Writer report for arqNeander
-Tue Jun 16 20:01:01 2026
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Thu Jun 18 21:55:05 2026
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jun 16 20:01:01 2026 ;
+; EDA Netlist Writer Status ; Successful - Thu Jun 18 21:55:05 2026 ;
 ; Revision Name             ; arqNeander                            ;
 ; Top-level Entity Name     ; temporizador                          ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -70,13 +70,13 @@ applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jun 16 20:01:01 2026
-Info: Command: quartus_eda --functional=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog arqNeander -c arqNeander
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Thu Jun 18 21:55:04 2026
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off arqNeander -c arqNeander
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4571 megabytes
-    Info: Processing ended: Tue Jun 16 20:01:01 2026
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4593 megabytes
+    Info: Processing ended: Thu Jun 18 21:55:05 2026
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
