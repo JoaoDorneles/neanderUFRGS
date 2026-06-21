@@ -1,43 +1,69 @@
-|temporizador
-clk => clk.IN3
-rst => rst.IN3
-hlt => d0.IN1
-hlt => d1.IN1
-hlt => d2.IN1
-hlt => d0.IN1
-hlt => d1.IN1
-hlt => d2.IN1
-goto_t0 => d0.IN1
-goto_t0 => d1.IN1
-goto_t0 => d2.IN1
-t7 << t7.DB_MAX_OUTPUT_PORT_TYPE
-t6 << t6.DB_MAX_OUTPUT_PORT_TYPE
-t5 << t5.DB_MAX_OUTPUT_PORT_TYPE
-t4 << t4.DB_MAX_OUTPUT_PORT_TYPE
-t3 << t3.DB_MAX_OUTPUT_PORT_TYPE
-t2 << t2.DB_MAX_OUTPUT_PORT_TYPE
-t1 << t1.DB_MAX_OUTPUT_PORT_TYPE
-t0 << t0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|temporizador|flip_flop_d:ff0
-clk => q~reg0.CLK
-rst => q~reg0.ACLR
-d => q~reg0.DATAIN
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|temporizador|flip_flop_d:ff1
-clk => q~reg0.CLK
-rst => q~reg0.ACLR
-d => q~reg0.DATAIN
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|temporizador|flip_flop_d:ff2
-clk => q~reg0.CLK
-rst => q~reg0.ACLR
-d => q~reg0.DATAIN
-q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|unidadeDeControle
+t0 => cargaREM.IN1
+t1 => incrementaPC.IN1
+t1 => read.IN1
+t2 => cargaRI.DATAIN
+t3 => cargaREM.IN1
+t3 => incrementaPC.IN1
+t3 => cargaAC.IN0
+t3 => goto_t0.IN1
+t4 => incrementaPC.IN1
+t4 => read.IN1
+t5 => cargaREM.IN1
+t5 => cargaPC.IN1
+t6 => cargaRDM.IN0
+t6 => read.IN1
+t7 => write.IN0
+t7 => ULA_y.IN0
+t7 => ULA_add.IN0
+t7 => ULA_or.IN0
+t7 => ULA_and.IN0
+t7 => cargaAC.IN1
+t7 => goto_t0.IN1
+flagZ => cargaREM.IN0
+flagZ => goto_t0.IN0
+flagN => cargaREM.IN0
+flagN => goto_t0.IN0
+NOP => goto_t0.IN0
+STA => cargaREM.IN0
+STA => cargaRDM.IN1
+STA => write.IN1
+LDA => cargaREM.IN1
+LDA => ULA_y.IN1
+LDA => cargaAC.IN0
+ADD => cargaREM.IN1
+ADD => ULA_add.IN1
+ADD => cargaAC.IN1
+OR => cargaREM.IN1
+OR => ULA_or.IN1
+OR => cargaAC.IN1
+AND => cargaREM.IN1
+AND => ULA_and.IN1
+AND => cargaAC.IN1
+NOT => cargaAC.IN1
+NOT => goto_t0.IN1
+JMP => cargaREM.IN1
+JMP => cargaPC.IN1
+JZ => cargaREM.IN1
+JZ => goto_t0.IN1
+JN => cargaREM.IN1
+JN => goto_t0.IN1
+HLT => ~NO_FANOUT~
+cargaREM <= cargaREM.DB_MAX_OUTPUT_PORT_TYPE
+cargaAC <= cargaAC.DB_MAX_OUTPUT_PORT_TYPE
+cargaNZ <= cargaAC.DB_MAX_OUTPUT_PORT_TYPE
+cargaPC <= cargaPC.DB_MAX_OUTPUT_PORT_TYPE
+goto_t0 <= goto_t0.DB_MAX_OUTPUT_PORT_TYPE
+incrementaPC <= incrementaPC.DB_MAX_OUTPUT_PORT_TYPE
+cargaRI <= t2.DB_MAX_OUTPUT_PORT_TYPE
+sel <= cargaREM.DB_MAX_OUTPUT_PORT_TYPE
+cargaRDM <= cargaRDM.DB_MAX_OUTPUT_PORT_TYPE
+read <= read.DB_MAX_OUTPUT_PORT_TYPE
+write <= write.DB_MAX_OUTPUT_PORT_TYPE
+ULA_y <= ULA_y.DB_MAX_OUTPUT_PORT_TYPE
+ULA_add <= ULA_add.DB_MAX_OUTPUT_PORT_TYPE
+ULA_and <= ULA_and.DB_MAX_OUTPUT_PORT_TYPE
+ULA_or <= ULA_or.DB_MAX_OUTPUT_PORT_TYPE
+ULA_not <= cargaAC.DB_MAX_OUTPUT_PORT_TYPE
 
 
