@@ -1,6 +1,6 @@
 Analysis & Synthesis report for arqNeander
-Mon Jun 22 01:07:17 2026
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Jun 22 15:20:40 2026
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -14,8 +14,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
  11. Parameter Settings for User Entity Instance: divisor_de_frequencia:instDiv
  12. Parameter Settings for User Entity Instance: ULA:inst|RCA8:rca8_ULA
  13. Port Connectivity Checks: "ULA:inst|RCA8:rca8_ULA"
@@ -45,28 +45,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 22 01:07:17 2026           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; arqNeander                                      ;
-; Top-level Entity Name              ; neander                                         ;
-; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; 176                                             ;
-;     Total combinational functions  ; 172                                             ;
-;     Dedicated logic registers      ; 67                                              ;
-; Total registers                    ; 67                                              ;
-; Total pins                         ; 35                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total GXB Receiver Channel PCS     ; 0                                               ;
-; Total GXB Receiver Channel PMA     ; 0                                               ;
-; Total GXB Transmitter Channel PCS  ; 0                                               ;
-; Total GXB Transmitter Channel PMA  ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jun 22 15:20:40 2026      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; arqNeander                                 ;
+; Top-level Entity Name              ; neander                                    ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 37                                         ;
+;     Total combinational functions  ; 37                                         ;
+;     Dedicated logic registers      ; 14                                         ;
+; Total registers                    ; 14                                         ;
+; Total pins                         ; 39                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -74,8 +70,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
 ; Top-level entity name                                                      ; neander            ; arqNeander         ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -161,209 +158,183 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 16     ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                            ; Library ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
-; seg_G.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/seg_G.bdf               ;         ;
-; seg_E.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/seg_E.bdf               ;         ;
-; seg_D.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/seg_D.bdf               ;         ;
-; seg_B.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/seg_B.bdf               ;         ;
-; seg_A.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/seg_A.bdf               ;         ;
-; F.bdf                            ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/F.bdf                   ;         ;
-; BCD-7seg.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/BCD-7seg.bdf            ;         ;
-; bcd_ledC.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/bcd_ledC.bdf            ;         ;
-; fa.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/fa.v                    ;         ;
-; ha.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ha.v                    ;         ;
-; mux.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/mux.v                   ;         ;
-; mux21.v                          ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/mux21.v                 ;         ;
-; RCA8.v                           ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/RCA8.v                  ;         ;
-; ULA.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ULA.v                   ;         ;
-; decodificadorNeander.v           ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/decodificadorNeander.v  ;         ;
-; codificadorULA.v                 ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/codificadorULA.v        ;         ;
-; divisor_de_frequencia.v          ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/divisor_de_frequencia.v ;         ;
-; flip_flop_d.v                    ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/flip_flop_d.v           ;         ;
-; temporizador.v                   ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/temporizador.v          ;         ;
-; neander.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/neander.bdf             ;         ;
-; runStepMode.v                    ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/runStepMode.v           ;         ;
-; AC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/AC.v                    ;         ;
-; ffd_enable.v                     ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ffd_enable.v            ;         ;
-; RDM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/RDM.v                   ;         ;
-; REM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/REM.v                   ;         ;
-; incrementaPC.v                   ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/incrementaPC.v          ;         ;
-; PC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/PC.v                    ;         ;
-; NZ.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/NZ.v                    ;         ;
-; RI.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/RI.v                    ;         ;
-; ROM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ROM.v                   ;         ;
-; unidadeDeControle.v              ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/unidadeDeControle.v     ;         ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
+; seg_G.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/seg_G.bdf               ;         ;
+; seg_E.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/seg_E.bdf               ;         ;
+; seg_D.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/seg_D.bdf               ;         ;
+; seg_B.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/seg_B.bdf               ;         ;
+; seg_A.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/seg_A.bdf               ;         ;
+; F.bdf                            ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/F.bdf                   ;         ;
+; BCD-7seg.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/BCD-7seg.bdf            ;         ;
+; bcd_ledC.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/bcd_ledC.bdf            ;         ;
+; fa.v                             ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/fa.v                    ;         ;
+; ha.v                             ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/ha.v                    ;         ;
+; mux.v                            ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/mux.v                   ;         ;
+; mux21.v                          ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/mux21.v                 ;         ;
+; RCA8.v                           ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/RCA8.v                  ;         ;
+; ULA.v                            ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/ULA.v                   ;         ;
+; decodificadorNeander.v           ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/decodificadorNeander.v  ;         ;
+; codificadorULA.v                 ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/codificadorULA.v        ;         ;
+; divisor_de_frequencia.v          ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/divisor_de_frequencia.v ;         ;
+; flip_flop_d.v                    ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/flip_flop_d.v           ;         ;
+; temporizador.v                   ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/temporizador.v          ;         ;
+; neander.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/neander.bdf             ;         ;
+; runStepMode.v                    ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/runStepMode.v           ;         ;
+; AC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/AC.v                    ;         ;
+; ffd_enable.v                     ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/ffd_enable.v            ;         ;
+; RDM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/RDM.v                   ;         ;
+; REM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/REM.v                   ;         ;
+; incrementaPC.v                   ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/incrementaPC.v          ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/PC.v                    ;         ;
+; NZ.v                             ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/NZ.v                    ;         ;
+; RI.v                             ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/RI.v                    ;         ;
+; ROM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/ROM.v                   ;         ;
+; unidadeDeControle.v              ; yes             ; User Verilog HDL File              ; C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/unidadeDeControle.v     ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 35               ;
-; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; resetIN~input    ;
-; Maximum fan-out          ; 64               ;
-; Total fan-out            ; 852              ;
-; Average fan-out          ; 2.76             ;
-+--------------------------+------------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 37            ;
+;                                             ;               ;
+; Total combinational functions               ; 37            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 21            ;
+;     -- 3 input functions                    ; 6             ;
+;     -- <=2 input functions                  ; 10            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 37            ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 14            ;
+;     -- Dedicated logic registers            ; 14            ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 39            ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+; Maximum fan-out node                        ; resetIN~input ;
+; Maximum fan-out                             ; 12            ;
+; Total fan-out                               ; 214           ;
+; Average fan-out                             ; 1.66          ;
++---------------------------------------------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
-+-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Library Name ;
-+-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
-; |neander                            ; 172 (2)           ; 67 (0)       ; 0           ; 0            ; 0       ; 0         ; 0         ; 35   ; 0            ; |neander                                                           ; work         ;
-;    |AC:inst8|                       ; 0 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8                                                  ; work         ;
-;       |ffd_enable:ffd0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd0                                  ; work         ;
-;       |ffd_enable:ffd1|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd1                                  ; work         ;
-;       |ffd_enable:ffd2|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd2                                  ; work         ;
-;       |ffd_enable:ffd3|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd3                                  ; work         ;
-;       |ffd_enable:ffd4|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd4                                  ; work         ;
-;       |ffd_enable:ffd5|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd5                                  ; work         ;
-;       |ffd_enable:ffd6|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|AC:inst8|ffd_enable:ffd6                                  ; work         ;
-;    |BCD-7seg:inst16|                ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16                                           ; work         ;
-;       |F:inst6|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|F:inst6                                   ; work         ;
-;       |bcd_ledC:inst3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|bcd_ledC:inst3                            ; work         ;
-;       |seg_A:inst|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|seg_A:inst                                ; work         ;
-;       |seg_B:inst2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|seg_B:inst2                               ; work         ;
-;       |seg_D:inst4|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|seg_D:inst4                               ; work         ;
-;       |seg_E:inst5|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|seg_E:inst5                               ; work         ;
-;       |seg_G:inst7|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst16|seg_G:inst7                               ; work         ;
-;    |BCD-7seg:inst17|                ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17                                           ; work         ;
-;       |F:inst6|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|F:inst6                                   ; work         ;
-;       |bcd_ledC:inst3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|bcd_ledC:inst3                            ; work         ;
-;       |seg_A:inst|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|seg_A:inst                                ; work         ;
-;       |seg_B:inst2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|seg_B:inst2                               ; work         ;
-;       |seg_D:inst4|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|seg_D:inst4                               ; work         ;
-;       |seg_E:inst5|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|seg_E:inst5                               ; work         ;
-;       |seg_G:inst7|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst17|seg_G:inst7                               ; work         ;
-;    |BCD-7seg:inst19|                ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19                                           ; work         ;
-;       |F:inst6|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|F:inst6                                   ; work         ;
-;       |bcd_ledC:inst3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|bcd_ledC:inst3                            ; work         ;
-;       |seg_A:inst|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_A:inst                                ; work         ;
-;       |seg_B:inst2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_B:inst2                               ; work         ;
-;       |seg_D:inst4|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_D:inst4                               ; work         ;
-;       |seg_E:inst5|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_E:inst5                               ; work         ;
-;       |seg_G:inst7|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_G:inst7                               ; work         ;
-;    |BCD-7seg:inst20|                ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20                                           ; work         ;
-;       |F:inst6|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|F:inst6                                   ; work         ;
-;       |bcd_ledC:inst3|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|bcd_ledC:inst3                            ; work         ;
-;       |seg_A:inst|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_A:inst                                ; work         ;
-;       |seg_B:inst2|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_B:inst2                               ; work         ;
-;       |seg_D:inst4|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_D:inst4                               ; work         ;
-;       |seg_E:inst5|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_E:inst5                               ; work         ;
-;       |seg_G:inst7|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_G:inst7                               ; work         ;
-;    |NZ:inst9|                       ; 0 (0)             ; 2 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|NZ:inst9                                                  ; work         ;
-;       |ffd_enable:ffd_N|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|NZ:inst9|ffd_enable:ffd_N                                 ; work         ;
-;       |ffd_enable:ffd_Z|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|NZ:inst9|ffd_enable:ffd_Z                                 ; work         ;
-;    |PC:inst6|                       ; 14 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6                                                  ; work         ;
-;       |ffd_enable:ffd0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd0                                  ; work         ;
-;       |ffd_enable:ffd1|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd1                                  ; work         ;
-;       |ffd_enable:ffd2|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd2                                  ; work         ;
-;       |ffd_enable:ffd3|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd3                                  ; work         ;
-;       |ffd_enable:ffd4|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd4                                  ; work         ;
-;       |ffd_enable:ffd5|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd5                                  ; work         ;
-;       |ffd_enable:ffd6|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd6                                  ; work         ;
-;       |ffd_enable:ffd7|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd7                                  ; work         ;
-;       |incrementaPC:inc|            ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|incrementaPC:inc                                 ; work         ;
-;          |ha:ha2|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|incrementaPC:inc|ha:ha2                          ; work         ;
-;          |ha:ha3|                   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|incrementaPC:inc|ha:ha3                          ; work         ;
-;          |ha:ha4|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|incrementaPC:inc|ha:ha4                          ; work         ;
-;          |ha:ha6|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|incrementaPC:inc|ha:ha6                          ; work         ;
-;          |ha:ha7|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|incrementaPC:inc|ha:ha7                          ; work         ;
-;       |mux21:mux_inc|               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|PC:inst6|mux21:mux_inc                                    ; work         ;
-;    |RDM:inst11|                     ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11                                                ; work         ;
-;       |ffd_enable:ffd0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd0                                ; work         ;
-;       |ffd_enable:ffd1|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd1                                ; work         ;
-;       |ffd_enable:ffd2|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd2                                ; work         ;
-;       |ffd_enable:ffd3|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd3                                ; work         ;
-;       |ffd_enable:ffd4|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd4                                ; work         ;
-;       |ffd_enable:ffd5|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd5                                ; work         ;
-;       |ffd_enable:ffd6|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd6                                ; work         ;
-;       |ffd_enable:ffd7|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RDM:inst11|ffd_enable:ffd7                                ; work         ;
-;    |REM:inst10|                     ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10                                                ; work         ;
-;       |ffd_enable:ffd0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd0                                ; work         ;
-;       |ffd_enable:ffd1|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd1                                ; work         ;
-;       |ffd_enable:ffd2|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd2                                ; work         ;
-;       |ffd_enable:ffd3|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd3                                ; work         ;
-;       |ffd_enable:ffd4|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd4                                ; work         ;
-;       |ffd_enable:ffd5|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd5                                ; work         ;
-;       |ffd_enable:ffd6|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd6                                ; work         ;
-;       |ffd_enable:ffd7|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|REM:inst10|ffd_enable:ffd7                                ; work         ;
-;    |RI:inst1|                       ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RI:inst1                                                  ; work         ;
-;       |ffd_enable:ffd4|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RI:inst1|ffd_enable:ffd4                                  ; work         ;
-;       |ffd_enable:ffd5|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RI:inst1|ffd_enable:ffd5                                  ; work         ;
-;       |ffd_enable:ffd6|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RI:inst1|ffd_enable:ffd6                                  ; work         ;
-;       |ffd_enable:ffd7|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|RI:inst1|ffd_enable:ffd7                                  ; work         ;
-;    |ROM:inst14|                     ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ROM:inst14                                                ; work         ;
-;    |ULA:inst|                       ; 38 (4)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst                                                  ; work         ;
-;       |RCA8:rca8_ULA|               ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst|RCA8:rca8_ULA                                    ; work         ;
-;          |fa:gen_for[1].u_fa|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[1].u_fa                 ; work         ;
-;          |fa:gen_for[3].u_fa|       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[3].u_fa                 ; work         ;
-;          |fa:gen_for[4].u_fa|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[4].u_fa                 ; work         ;
-;          |fa:gen_for[5].u_fa|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[5].u_fa                 ; work         ;
-;       |mux21:mux5|                  ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|ULA:inst|mux21:mux5                                       ; work         ;
-;    |codificadorULA:inst2|           ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|codificadorULA:inst2                                      ; work         ;
-;    |decodificadorNeander:inst3|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|decodificadorNeander:inst3                                ; work         ;
-;    |divisor_de_frequencia:instDiv|  ; 27 (0)            ; 27 (0)       ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv                             ; work         ;
-;       |flip_flop_d:ff0|             ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:ff0             ; work         ;
-;       |flip_flop_d:gen_for[0].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[0].ffN  ; work         ;
-;       |flip_flop_d:gen_for[10].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[10].ffN ; work         ;
-;       |flip_flop_d:gen_for[11].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[11].ffN ; work         ;
-;       |flip_flop_d:gen_for[12].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[12].ffN ; work         ;
-;       |flip_flop_d:gen_for[13].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[13].ffN ; work         ;
-;       |flip_flop_d:gen_for[14].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[14].ffN ; work         ;
-;       |flip_flop_d:gen_for[15].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[15].ffN ; work         ;
-;       |flip_flop_d:gen_for[16].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[16].ffN ; work         ;
-;       |flip_flop_d:gen_for[17].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[17].ffN ; work         ;
-;       |flip_flop_d:gen_for[18].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[18].ffN ; work         ;
-;       |flip_flop_d:gen_for[19].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[19].ffN ; work         ;
-;       |flip_flop_d:gen_for[1].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[1].ffN  ; work         ;
-;       |flip_flop_d:gen_for[20].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[20].ffN ; work         ;
-;       |flip_flop_d:gen_for[21].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[21].ffN ; work         ;
-;       |flip_flop_d:gen_for[22].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[22].ffN ; work         ;
-;       |flip_flop_d:gen_for[23].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[23].ffN ; work         ;
-;       |flip_flop_d:gen_for[24].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[24].ffN ; work         ;
-;       |flip_flop_d:gen_for[25].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[25].ffN ; work         ;
-;       |flip_flop_d:gen_for[2].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[2].ffN  ; work         ;
-;       |flip_flop_d:gen_for[3].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[3].ffN  ; work         ;
-;       |flip_flop_d:gen_for[4].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[4].ffN  ; work         ;
-;       |flip_flop_d:gen_for[5].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[5].ffN  ; work         ;
-;       |flip_flop_d:gen_for[6].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[6].ffN  ; work         ;
-;       |flip_flop_d:gen_for[7].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[7].ffN  ; work         ;
-;       |flip_flop_d:gen_for[8].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[8].ffN  ; work         ;
-;       |flip_flop_d:gen_for[9].ffN|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[9].ffN  ; work         ;
-;    |mux:inst4|                      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|mux:inst4                                                 ; work         ;
-;    |runStepMode:inst7|              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|runStepMode:inst7                                         ; work         ;
-;    |temporizador:inst5|             ; 6 (6)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|temporizador:inst5                                        ; work         ;
-;       |flip_flop_d:ff0|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|temporizador:inst5|flip_flop_d:ff0                        ; work         ;
-;       |flip_flop_d:ff1|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|temporizador:inst5|flip_flop_d:ff1                        ; work         ;
-;       |flip_flop_d:ff2|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|temporizador:inst5|flip_flop_d:ff2                        ; work         ;
-;    |unidadeDeControle:inst13|       ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |neander|unidadeDeControle:inst13                                  ; work         ;
-+-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------+
+; |neander                           ; 37 (0)            ; 14 (0)       ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |neander                                                          ; work         ;
+;    |BCD-7seg:inst19|               ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19                                          ; work         ;
+;       |F:inst6|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|F:inst6                                  ; work         ;
+;       |bcd_ledC:inst3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|bcd_ledC:inst3                           ; work         ;
+;       |seg_A:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_A:inst                               ; work         ;
+;       |seg_B:inst2|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_B:inst2                              ; work         ;
+;       |seg_D:inst4|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_D:inst4                              ; work         ;
+;       |seg_E:inst5|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_E:inst5                              ; work         ;
+;       |seg_G:inst7|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst19|seg_G:inst7                              ; work         ;
+;    |BCD-7seg:inst20|               ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20                                          ; work         ;
+;       |F:inst6|                    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|F:inst6                                  ; work         ;
+;       |bcd_ledC:inst3|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|bcd_ledC:inst3                           ; work         ;
+;       |seg_A:inst|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_A:inst                               ; work         ;
+;       |seg_B:inst2|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_B:inst2                              ; work         ;
+;       |seg_D:inst4|                ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_D:inst4                              ; work         ;
+;       |seg_E:inst5|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_E:inst5                              ; work         ;
+;       |seg_G:inst7|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|BCD-7seg:inst20|seg_G:inst7                              ; work         ;
+;    |PC:inst6|                      ; 10 (0)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6                                                 ; work         ;
+;       |ffd_enable:ffd0|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd0                                 ; work         ;
+;       |ffd_enable:ffd1|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd1                                 ; work         ;
+;       |ffd_enable:ffd2|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd2                                 ; work         ;
+;       |ffd_enable:ffd3|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd3                                 ; work         ;
+;       |ffd_enable:ffd4|            ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd4                                 ; work         ;
+;       |ffd_enable:ffd5|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd5                                 ; work         ;
+;       |ffd_enable:ffd6|            ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd6                                 ; work         ;
+;       |ffd_enable:ffd7|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|PC:inst6|ffd_enable:ffd7                                 ; work         ;
+;    |divisor_de_frequencia:instDiv| ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv                            ; work         ;
+;       |flip_flop_d:ff0|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:ff0            ; work         ;
+;       |flip_flop_d:gen_for[0].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[0].ffN ; work         ;
+;       |flip_flop_d:gen_for[1].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[1].ffN ; work         ;
+;       |flip_flop_d:gen_for[2].ffN| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[2].ffN ; work         ;
+;    |runStepMode:inst7|             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|runStepMode:inst7                                        ; work         ;
+;    |temporizador:inst5|            ; 6 (4)             ; 2 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|temporizador:inst5                                       ; work         ;
+;       |flip_flop_d:ff0|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|temporizador:inst5|flip_flop_d:ff0                       ; work         ;
+;       |flip_flop_d:ff1|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neander|temporizador:inst5|flip_flop_d:ff1                       ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+---------------------------------------+-----------------------------------------+
-; Register name                         ; Reason for Removal                      ;
-+---------------------------------------+-----------------------------------------+
-; AC:inst8|ffd_enable:ffd7|q            ; Merged with NZ:inst9|ffd_enable:ffd_N|q ;
-; Total Number of Removed Registers = 1 ;                                         ;
-+---------------------------------------+-----------------------------------------+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; AC:inst8|ffd_enable:ffd7|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd6|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd5|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd4|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd3|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd2|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd1|q             ; Stuck at GND due to stuck port clock_enable ;
+; AC:inst8|ffd_enable:ffd0|q             ; Stuck at GND due to stuck port clock_enable ;
+; NZ:inst9|ffd_enable:ffd_Z|q            ; Stuck at GND due to stuck port clock_enable ;
+; NZ:inst9|ffd_enable:ffd_N|q            ; Stuck at GND due to stuck port clock_enable ;
+; RDM:inst11|ffd_enable:ffd7|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd6|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd5|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd4|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd3|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd2|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd1|q           ; Lost fanout                                 ;
+; RDM:inst11|ffd_enable:ffd0|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd7|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd6|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd5|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd4|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd3|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd2|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd1|q           ; Lost fanout                                 ;
+; REM:inst10|ffd_enable:ffd0|q           ; Lost fanout                                 ;
+; temporizador:inst5|flip_flop_d:ff2|q   ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 27 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++----------------------------+--------------------------------+-------------------------------------------------------------+
+; Register name              ; Reason for Removal             ; Registers Removed due to This Register                      ;
++----------------------------+--------------------------------+-------------------------------------------------------------+
+; AC:inst8|ffd_enable:ffd7|q ; Stuck at GND                   ; RDM:inst11|ffd_enable:ffd7|q, REM:inst10|ffd_enable:ffd7|q, ;
+;                            ; due to stuck port clock_enable ; REM:inst10|ffd_enable:ffd6|q, REM:inst10|ffd_enable:ffd5|q, ;
+;                            ;                                ; REM:inst10|ffd_enable:ffd4|q, REM:inst10|ffd_enable:ffd3|q, ;
+;                            ;                                ; REM:inst10|ffd_enable:ffd2|q, REM:inst10|ffd_enable:ffd1|q, ;
+;                            ;                                ; REM:inst10|ffd_enable:ffd0|q                                ;
+; AC:inst8|ffd_enable:ffd6|q ; Stuck at GND                   ; NZ:inst9|ffd_enable:ffd_Z|q, NZ:inst9|ffd_enable:ffd_N|q,   ;
+;                            ; due to stuck port clock_enable ; RDM:inst11|ffd_enable:ffd6|q                                ;
+; AC:inst8|ffd_enable:ffd1|q ; Stuck at GND                   ; RDM:inst11|ffd_enable:ffd1|q, RDM:inst11|ffd_enable:ffd0|q  ;
+;                            ; due to stuck port clock_enable ;                                                             ;
+; AC:inst8|ffd_enable:ffd5|q ; Stuck at GND                   ; RDM:inst11|ffd_enable:ffd5|q                                ;
+;                            ; due to stuck port clock_enable ;                                                             ;
+; AC:inst8|ffd_enable:ffd4|q ; Stuck at GND                   ; RDM:inst11|ffd_enable:ffd4|q                                ;
+;                            ; due to stuck port clock_enable ;                                                             ;
+; AC:inst8|ffd_enable:ffd3|q ; Stuck at GND                   ; RDM:inst11|ffd_enable:ffd3|q                                ;
+;                            ; due to stuck port clock_enable ;                                                             ;
+; AC:inst8|ffd_enable:ffd2|q ; Stuck at GND                   ; RDM:inst11|ffd_enable:ffd2|q                                ;
+;                            ; due to stuck port clock_enable ;                                                             ;
++----------------------------+--------------------------------+-------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -371,24 +342,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 67    ;
+; Total registers                              ; 14    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 64    ;
+; Number of registers using Asynchronous Clear ; 12    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 37    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |neander|codificadorULA:inst2|selULA[0] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |neander|ULA:inst|mux21:mux5|saida[0]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +----------------------------------------------------------------------------+
@@ -396,7 +357,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+---------------------------------------------------+
 ; Parameter Name ; Value ; Type                                              ;
 +----------------+-------+---------------------------------------------------+
-; N              ; 27    ; Signed Integer                                    ;
+; N              ; 4     ; Signed Integer                                    ;
 +----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -452,8 +413,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jun 22 01:07:15 2026
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Jun 22 15:20:37 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off arqNeander -c arqNeander
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file seg_g.bdf
@@ -556,7 +517,7 @@ Info (12128): Elaborating entity "mux" for hierarchy "mux:inst4"
 Info (12128): Elaborating entity "PC" for hierarchy "PC:inst6"
 Info (12128): Elaborating entity "incrementaPC" for hierarchy "PC:inst6|incrementaPC:inc"
 Info (12128): Elaborating entity "ha" for hierarchy "PC:inst6|incrementaPC:inc|ha:ha0"
-Info (12128): Elaborating entity "mux21" for hierarchy "PC:inst6|mux21:mux_inc"
+Info (12128): Elaborating entity "mux21" for hierarchy "PC:inst6|mux21:mux_sel"
 Info (12128): Elaborating entity "NZ" for hierarchy "NZ:inst9"
 Info (12128): Elaborating entity "ULA" for hierarchy "ULA:inst"
 Info (12128): Elaborating entity "RCA8" for hierarchy "ULA:inst|RCA8:rca8_ULA"
@@ -564,17 +525,36 @@ Info (12128): Elaborating entity "fa" for hierarchy "ULA:inst|RCA8:rca8_ULA|fa:g
 Info (12128): Elaborating entity "codificadorULA" for hierarchy "codificadorULA:inst2"
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer runStepMode:inst7|clkOut
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "AC_0A" is stuck at GND
+    Warning (13410): Pin "AC_0B" is stuck at GND
+    Warning (13410): Pin "AC_0C" is stuck at GND
+    Warning (13410): Pin "AC_0D" is stuck at GND
+    Warning (13410): Pin "AC_0E" is stuck at GND
+    Warning (13410): Pin "AC_0F" is stuck at GND
+    Warning (13410): Pin "AC_0G" is stuck at VCC
+    Warning (13410): Pin "AC_1A" is stuck at GND
+    Warning (13410): Pin "AC_1B" is stuck at GND
+    Warning (13410): Pin "AC_1C" is stuck at GND
+    Warning (13410): Pin "AC_1D" is stuck at GND
+    Warning (13410): Pin "AC_1E" is stuck at GND
+    Warning (13410): Pin "AC_1F" is stuck at GND
+    Warning (13410): Pin "AC_1G" is stuck at VCC
+    Warning (13410): Pin "flagN_output" is stuck at GND
+    Warning (13410): Pin "flagZ_output" is stuck at GND
+    Warning (13410): Pin "HLT_output" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 218 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 76 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 183 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4649 megabytes
-    Info: Processing ended: Mon Jun 22 01:07:17 2026
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21059): Implemented 35 output pins
+    Info (21061): Implemented 37 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4624 megabytes
+    Info: Processing ended: Mon Jun 22 15:20:40 2026
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

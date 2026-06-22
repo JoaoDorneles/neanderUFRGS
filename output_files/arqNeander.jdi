@@ -1,8 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="1bfa3fdc0b03c949528d"/>
+    <hash md5_digest_80b="48cc9746d480ecaee417"/>
   </project>
   <file_info>
-    <file device="EP4CGX15BF14C6" path="arqNeander.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP3C16F484C6" path="arqNeander.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>
