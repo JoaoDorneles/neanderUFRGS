@@ -1,5 +1,5 @@
 Flow report for arqNeander
-Mon Jun 22 00:04:39 2026
+Mon Jun 22 01:07:29 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,16 +40,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Jun 22 00:04:39 2026           ;
+; Flow Status                        ; Successful - Mon Jun 22 01:07:29 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; arqNeander                                      ;
 ; Top-level Entity Name              ; neander                                         ;
 ; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; 0 / 14,400 ( 0 % )                              ;
-;     Total combinational functions  ; 0 / 14,400 ( 0 % )                              ;
-;     Dedicated logic registers      ; 0 / 14,400 ( 0 % )                              ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 4 / 81 ( 5 % )                                  ;
+; Total logic elements               ; 198 / 14,400 ( 1 % )                            ;
+;     Total combinational functions  ; 172 / 14,400 ( 1 % )                            ;
+;     Dedicated logic registers      ; 67 / 14,400 ( < 1 % )                           ;
+; Total registers                    ; 67                                              ;
+; Total pins                         ; 35 / 81 ( 43 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 552,960 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/22/2026 00:04:28 ;
+; Start date & time ; 06/22/2026 01:07:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; arqNeander          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ applicable agreement for further details.
 +-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                     ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 5218845139709.178209746829968                             ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 5218845139709.178210123513044                             ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                       ; --            ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/aluno/Downloads/projetoFinalPCD/simulation/qsim/ ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                               ; --            ; --          ; eda_simulation ;
@@ -98,12 +98,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4641 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 4919 MB             ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4607 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4614 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4563 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4638 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 4989 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4597 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4633 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4563 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
