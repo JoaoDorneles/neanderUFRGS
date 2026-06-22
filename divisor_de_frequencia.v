@@ -1,4 +1,4 @@
-module divisor_de_frequencia #(parameter N = 27)(
+module divisor_de_frequencia #(parameter N = 20)(
 	input clk, reset,
 	output freq_div
 	

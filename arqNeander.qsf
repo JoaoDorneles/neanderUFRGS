@@ -36,23 +36,20 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone IV GX"
-set_global_assignment -name DEVICE auto
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C16F484C6
 set_global_assignment -name TOP_LEVEL_ENTITY neander
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:09:32  JUNE 02, 2026"
-set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Users/aluno/Downloads/projetoFinalPCD/simulation/qsim/" -section_id eda_simulation
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Users/aluno/Downloads/neanderUFRGS-main/neanderUFRGS-main/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name SIMULATION_MODE TIMING
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/victo/OneDrive/Área de Trabalho/NeanderTF/neanderUFRGS/WaveformTemporizador.vwf"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name BDF_FILE seg_G.bdf
 set_global_assignment -name BDF_FILE seg_E.bdf
 set_global_assignment -name BDF_FILE seg_D.bdf
@@ -87,4 +84,55 @@ set_global_assignment -name VERILOG_FILE RI.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE WaveformTemporizador.vwf
 set_global_assignment -name VERILOG_FILE ROM.v
 set_global_assignment -name VERILOG_FILE unidadeDeControle.v
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_E11 -to AC_0A
+set_location_assignment PIN_F11 -to AC_0B
+set_location_assignment PIN_H12 -to AC_0C
+set_location_assignment PIN_H13 -to AC_0D
+set_location_assignment PIN_G12 -to AC_0E
+set_location_assignment PIN_F12 -to AC_0F
+set_location_assignment PIN_F13 -to AC_0G
+set_location_assignment PIN_A13 -to AC_1A
+set_location_assignment PIN_B13 -to AC_1B
+set_location_assignment PIN_C13 -to AC_1C
+set_location_assignment PIN_A14 -to AC_1D
+set_location_assignment PIN_B14 -to AC_1E
+set_location_assignment PIN_E14 -to AC_1F
+set_location_assignment PIN_A15 -to AC_1G
+set_location_assignment PIN_D15 -to PC_0A
+set_location_assignment PIN_A16 -to PC_0B
+set_location_assignment PIN_B16 -to PC_0C
+set_location_assignment PIN_E15 -to PC_0D
+set_location_assignment PIN_A17 -to PC_0E
+set_location_assignment PIN_B17 -to PC_0F
+set_location_assignment PIN_F14 -to PC_0G
+set_location_assignment PIN_B18 -to PC_1A
+set_location_assignment PIN_F15 -to PC_1B
+set_location_assignment PIN_A19 -to PC_1C
+set_location_assignment PIN_B19 -to PC_1D
+set_location_assignment PIN_C19 -to PC_1E
+set_location_assignment PIN_D19 -to PC_1F
+set_location_assignment PIN_G15 -to PC_1G
+set_location_assignment PIN_G21 -to clkIN
+set_location_assignment PIN_J1 -to flagN_output
+set_location_assignment PIN_J2 -to flagZ_output
+set_location_assignment PIN_E1 -to HLT_output
+set_location_assignment PIN_H2 -to resetIN
+set_location_assignment PIN_G3 -to runDebugIN
+set_location_assignment PIN_J6 -to selRunStepMode
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform3.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform5.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_D13 -to t0Output
+set_location_assignment PIN_B15 -to t1Output
+set_location_assignment PIN_A18 -to t2Output
+set_location_assignment PIN_G16 -to t3Output
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -3,26 +3,25 @@ module PC(clk, reset, cargaPC, incrementaPC, d, q);
 	input  [7:0] d;
 	output [7:0] q;
 	
-	wire [7:0] q_inc;     // saída do incrementador
-	wire [7:0] d_mux1;    // saída do mux de incremento
-	wire [7:0] d_final;   // entrada final nos flip-flops
-	wire       enable;    // habilita os FFDs
+	wire [7:0] q_inc;    // saída do incrementador
+	wire [7:0] d_final;  // entrada final nos flip-flops
+	wire       enable;   // habilita os FFDs quando alguma operação está ativa
 	
-	// incrementa o valor atual do PC
+	// incrementa o valor atual do PC (PC + 1)
 	incrementaPC inc(q, q_inc);
 	
-	// mux1: escolhe entre valor externo (d) ou valor incrementado
-	// sel=0 -> d externo (cargaPC), sel=1 -> incrementado
-	mux21 mux_inc(d, q_inc, incrementaPC, d_mux1);
+	// mux: escolhe O QUE carregar nos FFDs
+	//   cargaPC = 0 -> seleciona q_inc (caminho natural, incremento)
+	//   cargaPC = 1 -> seleciona d     (carga do RDM, ex: desvio/jump)
+	mux21 mux_sel(q_inc, d, cargaPC, d_final);
 	
-	// mux2: escolhe entre manter (q atual) ou novo valor (d_mux1)
-	// sel=0 -> mantém q, sel=1 -> carrega d_mux1
-	mux21 mux_carga(q, d_mux1, cargaPC, d_final);
-	
-	// enable: habilita FFDs se cargaPC OU incrementaPC estiver ativo
+	// enable: habilita os FFDs somente quando há uma operação ativa
+	//   incrementaPC = 1 -> PC avança normalmente pelo código
+	//   cargaPC      = 1 -> PC recebe valor externo do RDM
+	//   ambos = 0        -> PC mantém valor atual (hold)
 	assign enable = cargaPC | incrementaPC;
 	
-	// 8 flip-flops D em paralelo
+	// 8 flip-flops D em paralelo formam o registrador PC de 8 bits
 	ffd_enable ffd0(clk, reset, enable, d_final[0], q[0]);
 	ffd_enable ffd1(clk, reset, enable, d_final[1], q[1]);
 	ffd_enable ffd2(clk, reset, enable, d_final[2], q[2]);
