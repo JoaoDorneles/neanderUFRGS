@@ -1,4 +1,322 @@
-|unidadeDeControle
+|neander
+runDebugIN => runStepMode:inst7.runDebug
+selRunStepMode => runStepMode:inst7.sel
+clkIN => divisor_de_frequencia:instDiv.clk
+resetIN => divisor_de_frequencia:instDiv.reset
+resetIN => RI:inst1.reset
+resetIN => RDM:inst11.rst
+resetIN => REM:inst10.rst
+resetIN => PC:inst6.reset
+resetIN => NZ:inst9.reset
+resetIN => AC:inst8.rst
+
+
+|neander|ULA:inst
+selULA[0] => selULA[0].IN2
+selULA[1] => selULA[1].IN1
+selULA[2] => selULA[2].IN1
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+x[4] => x[4].IN1
+x[5] => x[5].IN1
+x[6] => x[6].IN1
+x[7] => x[7].IN1
+y[0] => y[0].IN2
+y[1] => y[1].IN2
+y[2] => y[2].IN2
+y[3] => y[3].IN2
+y[4] => y[4].IN2
+y[5] => y[5].IN2
+y[6] => y[6].IN2
+y[7] => y[7].IN2
+result[0] <= mux21:mux5.port3
+result[1] <= mux21:mux5.port3
+result[2] <= mux21:mux5.port3
+result[3] <= mux21:mux5.port3
+result[4] <= mux21:mux5.port3
+result[5] <= mux21:mux5.port3
+result[6] <= mux21:mux5.port3
+result[7] <= mux21:mux5.port3
+flagZ <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+flagN <= mux21:mux5.port3
+
+
+|neander|ULA:inst|RCA8:rca8_ULA
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+x[4] => x[4].IN1
+x[5] => x[5].IN1
+x[6] => x[6].IN1
+x[7] => x[7].IN1
+y[0] => y[0].IN1
+y[1] => y[1].IN1
+y[2] => y[2].IN1
+y[3] => y[3].IN1
+y[4] => y[4].IN1
+y[5] => y[5].IN1
+y[6] => y[6].IN1
+y[7] => y[7].IN1
+cout <= fa:gen_for[7].u_fa.port4
+result[0] <= ha:u_ha0.port3
+result[1] <= fa:gen_for[1].u_fa.port3
+result[2] <= fa:gen_for[2].u_fa.port3
+result[3] <= fa:gen_for[3].u_fa.port3
+result[4] <= fa:gen_for[4].u_fa.port3
+result[5] <= fa:gen_for[5].u_fa.port3
+result[6] <= fa:gen_for[6].u_fa.port3
+result[7] <= fa:gen_for[7].u_fa.port3
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|ha:u_ha0
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[1].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[2].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[3].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[4].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[5].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[6].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|RCA8:rca8_ULA|fa:gen_for[7].u_fa
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cin => result.IN1
+cin => cout.IN1
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|mux21:mux1
+x[0] => saida.DATAB
+x[1] => saida.DATAB
+x[2] => saida.DATAB
+x[3] => saida.DATAB
+x[4] => saida.DATAB
+x[5] => saida.DATAB
+x[6] => saida.DATAB
+x[7] => saida.DATAB
+y[0] => saida.DATAA
+y[1] => saida.DATAA
+y[2] => saida.DATAA
+y[3] => saida.DATAA
+y[4] => saida.DATAA
+y[5] => saida.DATAA
+y[6] => saida.DATAA
+y[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|mux21:mux2
+x[0] => saida.DATAB
+x[1] => saida.DATAB
+x[2] => saida.DATAB
+x[3] => saida.DATAB
+x[4] => saida.DATAB
+x[5] => saida.DATAB
+x[6] => saida.DATAB
+x[7] => saida.DATAB
+y[0] => saida.DATAA
+y[1] => saida.DATAA
+y[2] => saida.DATAA
+y[3] => saida.DATAA
+y[4] => saida.DATAA
+y[5] => saida.DATAA
+y[6] => saida.DATAA
+y[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|mux21:mux4
+x[0] => saida.DATAB
+x[1] => saida.DATAB
+x[2] => saida.DATAB
+x[3] => saida.DATAB
+x[4] => saida.DATAB
+x[5] => saida.DATAB
+x[6] => saida.DATAB
+x[7] => saida.DATAB
+y[0] => saida.DATAA
+y[1] => saida.DATAA
+y[2] => saida.DATAA
+y[3] => saida.DATAA
+y[4] => saida.DATAA
+y[5] => saida.DATAA
+y[6] => saida.DATAA
+y[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ULA:inst|mux21:mux5
+x[0] => saida.DATAB
+x[1] => saida.DATAB
+x[2] => saida.DATAB
+x[3] => saida.DATAB
+x[4] => saida.DATAB
+x[5] => saida.DATAB
+x[6] => saida.DATAB
+x[7] => saida.DATAB
+y[0] => saida.DATAA
+y[1] => saida.DATAA
+y[2] => saida.DATAA
+y[3] => saida.DATAA
+y[4] => saida.DATAA
+y[5] => saida.DATAA
+y[6] => saida.DATAA
+y[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|codificadorULA:inst2
+ULA_y => selULA.DATAA
+ULA_add => selULA.OUTPUTSELECT
+ULA_add => selULA.OUTPUTSELECT
+ULA_add => selULA.OUTPUTSELECT
+ULA_and => selULA.OUTPUTSELECT
+ULA_and => selULA.OUTPUTSELECT
+ULA_and => selULA.OUTPUTSELECT
+ULA_or => selULA.OUTPUTSELECT
+ULA_or => selULA.OUTPUTSELECT
+ULA_or => selULA.OUTPUTSELECT
+ULA_not => selULA.OUTPUTSELECT
+ULA_not => selULA.DATAA
+ULA_not => selULA.DATAA
+selULA[0] <= selULA.DB_MAX_OUTPUT_PORT_TYPE
+selULA[1] <= selULA.DB_MAX_OUTPUT_PORT_TYPE
+selULA[2] <= selULA.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|unidadeDeControle:inst13
 t0 => cargaREM.IN1
 t1 => incrementaPC.IN1
 t1 => read.IN1
@@ -65,5 +383,908 @@ ULA_add <= ULA_add.DB_MAX_OUTPUT_PORT_TYPE
 ULA_and <= ULA_and.DB_MAX_OUTPUT_PORT_TYPE
 ULA_or <= ULA_or.DB_MAX_OUTPUT_PORT_TYPE
 ULA_not <= cargaAC.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|temporizador:inst5
+clk => clk.IN3
+rst => rst.IN3
+hlt => d0.IN1
+hlt => d1.IN1
+hlt => d2.IN1
+hlt => d0.IN1
+hlt => d1.IN1
+hlt => d2.IN1
+goto_t0 => d0.IN1
+goto_t0 => d1.IN1
+goto_t0 => d2.IN1
+t7 <= t7.DB_MAX_OUTPUT_PORT_TYPE
+t6 <= t6.DB_MAX_OUTPUT_PORT_TYPE
+t5 <= t5.DB_MAX_OUTPUT_PORT_TYPE
+t4 <= t4.DB_MAX_OUTPUT_PORT_TYPE
+t3 <= t3.DB_MAX_OUTPUT_PORT_TYPE
+t2 <= t2.DB_MAX_OUTPUT_PORT_TYPE
+t1 <= t1.DB_MAX_OUTPUT_PORT_TYPE
+t0 <= t0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|temporizador:inst5|flip_flop_d:ff0
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|temporizador:inst5|flip_flop_d:ff1
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|temporizador:inst5|flip_flop_d:ff2
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|runStepMode:inst7
+clkDiv => clkOut.DATAA
+runDebug => clkOut.DATAB
+sel => clkOut.OUTPUTSELECT
+clkOut <= clkOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv
+clk => clk.IN1
+reset => rst.IN27
+freq_div <= flip_flop_d:gen_for[25].ffN.port3
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:ff0
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[0].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[1].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[2].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[3].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[4].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[5].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[6].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[7].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[8].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[9].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[10].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[11].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[12].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[13].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[14].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[15].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[16].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[17].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[18].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[19].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[20].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[21].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[22].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[23].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[24].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|divisor_de_frequencia:instDiv|flip_flop_d:gen_for[25].ffN
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|decodificadorNeander:inst3
+opcode[0] => Decoder0.IN3
+opcode[1] => Decoder0.IN2
+opcode[2] => Decoder0.IN1
+opcode[3] => Decoder0.IN0
+NOP <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+STA <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+LDA <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ADD <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+OR <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+AND <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+NOT <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+JMP <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+JZ <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+JN <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+HLT <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RI:inst1
+clk => clk.IN4
+reset => reset.IN4
+cargaRI => cargaRI.IN4
+d[0] => ~NO_FANOUT~
+d[1] => ~NO_FANOUT~
+d[2] => ~NO_FANOUT~
+d[3] => ~NO_FANOUT~
+d[4] => d[4].IN1
+d[5] => d[5].IN1
+d[6] => d[6].IN1
+d[7] => d[7].IN1
+q[0] <= <GND>
+q[1] <= <GND>
+q[2] <= <GND>
+q[3] <= <GND>
+q[4] <= ffd_enable:ffd4.port4
+q[5] <= ffd_enable:ffd5.port4
+q[6] <= ffd_enable:ffd6.port4
+q[7] <= ffd_enable:ffd7.port4
+
+
+|neander|RI:inst1|ffd_enable:ffd7
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RI:inst1|ffd_enable:ffd6
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RI:inst1|ffd_enable:ffd5
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RI:inst1|ffd_enable:ffd4
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11
+clk => clk.IN8
+rst => rst.IN8
+cargaRDM => cargaRDM.IN8
+d[0] => d[0].IN1
+d[1] => d[1].IN1
+d[2] => d[2].IN1
+d[3] => d[3].IN1
+d[4] => d[4].IN1
+d[5] => d[5].IN1
+d[6] => d[6].IN1
+d[7] => d[7].IN1
+q[0] <= ffd_enable:ffd0.port4
+q[1] <= ffd_enable:ffd1.port4
+q[2] <= ffd_enable:ffd2.port4
+q[3] <= ffd_enable:ffd3.port4
+q[4] <= ffd_enable:ffd4.port4
+q[5] <= ffd_enable:ffd5.port4
+q[6] <= ffd_enable:ffd6.port4
+q[7] <= ffd_enable:ffd7.port4
+
+
+|neander|RDM:inst11|ffd_enable:ffd0
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd1
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd2
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd3
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd4
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd5
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd6
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|RDM:inst11|ffd_enable:ffd7
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|ROM:inst14
+entrada[0] => Decoder0.IN7
+entrada[1] => Decoder0.IN6
+entrada[2] => Decoder0.IN5
+entrada[3] => Decoder0.IN4
+entrada[4] => Decoder0.IN3
+entrada[5] => Decoder0.IN2
+entrada[6] => Decoder0.IN1
+entrada[7] => Decoder0.IN0
+saida[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10
+clk => clk.IN8
+rst => rst.IN8
+cargaREM => cargaREM.IN8
+d[0] => d[0].IN1
+d[1] => d[1].IN1
+d[2] => d[2].IN1
+d[3] => d[3].IN1
+d[4] => d[4].IN1
+d[5] => d[5].IN1
+d[6] => d[6].IN1
+d[7] => d[7].IN1
+q[0] <= ffd_enable:ffd0.port4
+q[1] <= ffd_enable:ffd1.port4
+q[2] <= ffd_enable:ffd2.port4
+q[3] <= ffd_enable:ffd3.port4
+q[4] <= ffd_enable:ffd4.port4
+q[5] <= ffd_enable:ffd5.port4
+q[6] <= ffd_enable:ffd6.port4
+q[7] <= ffd_enable:ffd7.port4
+
+
+|neander|REM:inst10|ffd_enable:ffd0
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd1
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd2
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd3
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd4
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd5
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd6
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|REM:inst10|ffd_enable:ffd7
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|mux:inst4
+pc[0] => saida.DATAB
+pc[1] => saida.DATAB
+pc[2] => saida.DATAB
+pc[3] => saida.DATAB
+pc[4] => saida.DATAB
+pc[5] => saida.DATAB
+pc[6] => saida.DATAB
+pc[7] => saida.DATAB
+rdm[0] => saida.DATAA
+rdm[1] => saida.DATAA
+rdm[2] => saida.DATAA
+rdm[3] => saida.DATAA
+rdm[4] => saida.DATAA
+rdm[5] => saida.DATAA
+rdm[6] => saida.DATAA
+rdm[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6
+clk => clk.IN8
+reset => reset.IN8
+cargaPC => cargaPC.IN1
+incrementaPC => incrementaPC.IN1
+d[0] => d[0].IN1
+d[1] => d[1].IN1
+d[2] => d[2].IN1
+d[3] => d[3].IN1
+d[4] => d[4].IN1
+d[5] => d[5].IN1
+d[6] => d[6].IN1
+d[7] => d[7].IN1
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+x[4] => x[4].IN1
+x[5] => x[5].IN1
+x[6] => x[6].IN1
+x[7] => x[7].IN1
+result[0] <= ha:ha0.port3
+result[1] <= ha:ha1.port3
+result[2] <= ha:ha2.port3
+result[3] <= ha:ha3.port3
+result[4] <= ha:ha4.port3
+result[5] <= ha:ha5.port3
+result[6] <= ha:ha6.port3
+result[7] <= ha:ha7.port3
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha0
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha1
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha2
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha3
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha4
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha5
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha6
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|incrementaPC:inc|ha:ha7
+x => result.IN0
+x => cout.IN0
+y => result.IN1
+y => cout.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+result <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|mux21:mux_inc
+x[0] => saida.DATAB
+x[1] => saida.DATAB
+x[2] => saida.DATAB
+x[3] => saida.DATAB
+x[4] => saida.DATAB
+x[5] => saida.DATAB
+x[6] => saida.DATAB
+x[7] => saida.DATAB
+y[0] => saida.DATAA
+y[1] => saida.DATAA
+y[2] => saida.DATAA
+y[3] => saida.DATAA
+y[4] => saida.DATAA
+y[5] => saida.DATAA
+y[6] => saida.DATAA
+y[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|mux21:mux_carga
+x[0] => saida.DATAB
+x[1] => saida.DATAB
+x[2] => saida.DATAB
+x[3] => saida.DATAB
+x[4] => saida.DATAB
+x[5] => saida.DATAB
+x[6] => saida.DATAB
+x[7] => saida.DATAB
+y[0] => saida.DATAA
+y[1] => saida.DATAA
+y[2] => saida.DATAA
+y[3] => saida.DATAA
+y[4] => saida.DATAA
+y[5] => saida.DATAA
+y[6] => saida.DATAA
+y[7] => saida.DATAA
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+sel => saida.OUTPUTSELECT
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd0
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd1
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd2
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd3
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd4
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd5
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd6
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|PC:inst6|ffd_enable:ffd7
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|NZ:inst9
+clk => clk.IN2
+reset => reset.IN2
+cargaNZ => cargaNZ.IN2
+flagN => flagN.IN1
+flagZ => flagZ.IN1
+qN <= ffd_enable:ffd_N.port4
+qZ <= ffd_enable:ffd_Z.port4
+
+
+|neander|NZ:inst9|ffd_enable:ffd_N
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|NZ:inst9|ffd_enable:ffd_Z
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8
+clk => clk.IN8
+rst => rst.IN8
+cargaAC => cargaAC.IN8
+d[0] => d[0].IN1
+d[1] => d[1].IN1
+d[2] => d[2].IN1
+d[3] => d[3].IN1
+d[4] => d[4].IN1
+d[5] => d[5].IN1
+d[6] => d[6].IN1
+d[7] => d[7].IN1
+q[0] <= ffd_enable:ffd0.port4
+q[1] <= ffd_enable:ffd1.port4
+q[2] <= ffd_enable:ffd2.port4
+q[3] <= ffd_enable:ffd3.port4
+q[4] <= ffd_enable:ffd4.port4
+q[5] <= ffd_enable:ffd5.port4
+q[6] <= ffd_enable:ffd6.port4
+q[7] <= ffd_enable:ffd7.port4
+
+
+|neander|AC:inst8|ffd_enable:ffd0
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd1
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd2
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd3
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd4
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd5
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd6
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|neander|AC:inst8|ffd_enable:ffd7
+clk => q~reg0.CLK
+reset => q~reg0.ACLR
+enable => q~reg0.ENA
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

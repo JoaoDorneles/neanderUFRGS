@@ -1,5 +1,5 @@
 Analysis & Synthesis report for arqNeander
-Sun Jun 21 18:24:25 2026
+Mon Jun 22 00:04:29 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,8 +14,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: ULA:inst|RCA8:rca8_ULA
+ 10. Parameter Settings for User Entity Instance: divisor_de_frequencia:instDiv
+ 11. Port Connectivity Checks: "PC:inst6|incrementaPC:inc|ha:ha7"
+ 12. Port Connectivity Checks: "PC:inst6|incrementaPC:inc|ha:ha0"
+ 13. Port Connectivity Checks: "ULA:inst|RCA8:rca8_ULA"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 21 18:24:25 2026           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 22 00:04:29 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; arqNeander                                      ;
-; Top-level Entity Name              ; unidadeDeControle                               ;
+; Top-level Entity Name              ; neander                                         ;
 ; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; 22                                              ;
-;     Total combinational functions  ; 22                                              ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 37                                              ;
+; Total pins                         ; 4                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -67,7 +72,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; unidadeDeControle  ; arqNeander         ;
+; Top-level entity name                                                      ; neander            ; arqNeander         ;
 ; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -159,13 +164,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
-; unidadeDeControle.v              ; yes             ; User Verilog HDL File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/unidadeDeControle.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
+; fa.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/fa.v                    ;         ;
+; ha.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ha.v                    ;         ;
+; mux.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/mux.v                   ;         ;
+; mux21.v                          ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/mux21.v                 ;         ;
+; RCA8.v                           ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/RCA8.v                  ;         ;
+; ULA.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ULA.v                   ;         ;
+; decodificadorNeander.v           ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/decodificadorNeander.v  ;         ;
+; codificadorULA.v                 ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/codificadorULA.v        ;         ;
+; divisor_de_frequencia.v          ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/divisor_de_frequencia.v ;         ;
+; flip_flop_d.v                    ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/flip_flop_d.v           ;         ;
+; temporizador.v                   ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/temporizador.v          ;         ;
+; neander.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/neander.bdf             ;         ;
+; runStepMode.v                    ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/runStepMode.v           ;         ;
+; AC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/AC.v                    ;         ;
+; ffd_enable.v                     ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ffd_enable.v            ;         ;
+; RDM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/RDM.v                   ;         ;
+; REM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/REM.v                   ;         ;
+; incrementaPC.v                   ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/incrementaPC.v          ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/PC.v                    ;         ;
+; NZ.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/NZ.v                    ;         ;
+; RI.v                             ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/RI.v                    ;         ;
+; ROM.v                            ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/ROM.v                   ;         ;
+; unidadeDeControle.v              ; yes             ; User Verilog HDL File              ; C:/Users/victo/OneDrive/햞ea de Trabalho/NeanderTF/neanderUFRGS/unidadeDeControle.v     ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -173,12 +200,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 37               ;
+; I/O pins                 ; 4                ;
 ; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; t7~input         ;
-; Maximum fan-out          ; 7                ;
-; Total fan-out            ; 119              ;
-; Average fan-out          ; 1.24             ;
+; Maximum fan-out node     ; runDebugIN       ;
+; Maximum fan-out          ; 1                ;
+; Total fan-out            ; 4                ;
+; Average fan-out          ; 0.50             ;
 +--------------------------+------------------+
 
 
@@ -187,7 +214,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |unidadeDeControle         ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 37   ; 0            ; |unidadeDeControle  ; work         ;
+; |neander                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 4    ; 0            ; |neander            ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -207,6 +234,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:inst|RCA8:rca8_ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisor_de_frequencia:instDiv ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; N              ; 27    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:inst6|incrementaPC:inc|ha:ha7"                                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "PC:inst6|incrementaPC:inc|ha:ha0" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; y    ; Input ; Info     ; Stuck at VCC                       ;
++------+-------+----------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:inst|RCA8:rca8_ULA"                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -222,7 +296,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jun 21 18:24:24 2026
+    Info: Processing started: Mon Jun 22 00:04:28 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off arqNeander -c arqNeander
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file fa.v
@@ -275,19 +349,42 @@ Info (12021): Found 1 design units, including 1 entities, in source file rom.v
 Info (12021): Found 1 design units, including 1 entities, in source file unidadedecontrole.v
     Info (12023): Found entity 1: unidadeDeControle
 Warning (10236): Verilog HDL Implicit Net warning at divisor_de_frequencia.v(11): created implicit net for "rst"
-Info (12127): Elaborating entity "unidadeDeControle" for the top level hierarchy
-Info (286030): Timing-Driven Synthesis is running
+Info (12127): Elaborating entity "neander" for the top level hierarchy
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:inst"
+Info (12128): Elaborating entity "RCA8" for hierarchy "ULA:inst|RCA8:rca8_ULA"
+Info (12128): Elaborating entity "ha" for hierarchy "ULA:inst|RCA8:rca8_ULA|ha:u_ha0"
+Info (12128): Elaborating entity "fa" for hierarchy "ULA:inst|RCA8:rca8_ULA|fa:gen_for[1].u_fa"
+Info (12128): Elaborating entity "mux21" for hierarchy "ULA:inst|mux21:mux1"
+Info (12128): Elaborating entity "codificadorULA" for hierarchy "codificadorULA:inst2"
+Info (12128): Elaborating entity "unidadeDeControle" for hierarchy "unidadeDeControle:inst13"
+Info (12128): Elaborating entity "temporizador" for hierarchy "temporizador:inst5"
+Info (12128): Elaborating entity "flip_flop_d" for hierarchy "temporizador:inst5|flip_flop_d:ff0"
+Info (12128): Elaborating entity "runStepMode" for hierarchy "runStepMode:inst7"
+Info (12128): Elaborating entity "divisor_de_frequencia" for hierarchy "divisor_de_frequencia:instDiv"
+Info (12128): Elaborating entity "decodificadorNeander" for hierarchy "decodificadorNeander:inst3"
+Info (12128): Elaborating entity "RI" for hierarchy "RI:inst1"
+Info (12128): Elaborating entity "ffd_enable" for hierarchy "RI:inst1|ffd_enable:ffd7"
+Info (12128): Elaborating entity "RDM" for hierarchy "RDM:inst11"
+Info (12128): Elaborating entity "ROM" for hierarchy "ROM:inst14"
+Info (12128): Elaborating entity "REM" for hierarchy "REM:inst10"
+Info (12128): Elaborating entity "mux" for hierarchy "mux:inst4"
+Info (12128): Elaborating entity "PC" for hierarchy "PC:inst6"
+Info (12128): Elaborating entity "incrementaPC" for hierarchy "PC:inst6|incrementaPC:inc"
+Info (12128): Elaborating entity "NZ" for hierarchy "NZ:inst9"
+Info (12128): Elaborating entity "AC" for hierarchy "AC:inst8"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "HLT"
-Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 21 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 22 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "runDebugIN"
+    Warning (15610): No output dependent on input pin "selRunStepMode"
+    Warning (15610): No output dependent on input pin "clkIN"
+    Warning (15610): No output dependent on input pin "resetIN"
+Info (21057): Implemented 4 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 4652 megabytes
-    Info: Processing ended: Sun Jun 21 18:24:25 2026
+    Info: Processing ended: Mon Jun 22 00:04:29 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
